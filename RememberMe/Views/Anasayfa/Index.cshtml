@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Ajanda";
+}
+<link href="~/css/monthly.css" rel="stylesheet" />
+
+<div class="row">
+    <div class="col-md-12">
+        <div style="width:100%; display:inline-block;">
+            <div class="monthly" id="mycalendar"></div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+    <script src="~/js/monthly.js"></script>
+    <script>
+
+        var Data = { "monthly": @Html.Raw(ViewBag.Data)};
+
+        $(document).ready(function () {
+            $('#mycalendar').monthly({
+                mode: 'event',
+                dataType: 'json',
+			    events: Data
+            });
+        });
+    </script>
+}

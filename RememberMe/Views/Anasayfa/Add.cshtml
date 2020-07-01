@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Görev Ekle";
+}
+<h1>@ViewData["Title"]</h1>
+
+<div class="row">
+    <div class="col-md-12">
+        <form action="@Url.Action("Add","Anasayfa")" method="post">
+            <div class="form-group">
+                <label for="Title">Başlık</label>
+                <input type="text" class="form-control" id="baslik" placeholder="Başlık Giriniz" name="Content">
+            </div>
+            <div class="form-group">
+                <label for="tarih">Tarih seçin</label>
+                <input type="date" class="form-control" id="tarih" name="MissionDate">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
